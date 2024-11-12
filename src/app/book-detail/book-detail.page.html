@@ -1,5 +1,10 @@
 <ion-content>
   <div class="div-img"></div>
+  <ion-searchbar
+  placeholder="Search books..."
+  (ionInput)="onSearchChange($event)"
+  debounce="300"
+></ion-searchbar>
   <swiper-container
     class="books-slider"
     [autoplay]="{ 'delay': 3000, 'disableOnInteraction': false }"
@@ -13,30 +18,14 @@
       </swiper-slide>
     </ng-container>
   </swiper-container>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, architecto
-    voluptate unde soluta culpa veniam officiis veritatis assumenda, aliquid
-    harum a, ad corrupti blanditiis deserunt fugit. Minima vero deleniti
-    voluptatum nemo aspernatur repellat dolor, aliquid sapiente deserunt quaerat
-    corrupti error, rem ducimus ipsam necessitatibus dolore eligendi mollitia
-    eaque alias molestias debitis numquam dolorum? Magnam voluptatem placeat
-    sapiente facilis alias itaque vel! Sint obcaecati praesentium soluta earum
-    deserunt itaque maxime modi architecto. Enim ad laborum rerum magni
-    architecto minus sequi. Quia iure architecto, quaerat itaque ex sequi
-    adipisci consequuntur ab voluptatum, similique exercitationem, excepturi
-    ratione. Doloribus odit dolor fuga. Laborum, consequatur mollitia corrupti
-    dignissimos consectetur officiis qui eius minus ab, sequi provident soluta
-    iure? Deserunt expedita magni, dolor nostrum quis fugiat facilis iure
-    praesentium, rem perferendis esse consequatur molestias excepturi sint fuga.
-    Quos suscipit maiores optio corporis distinctio explicabo culpa recusandae
-    voluptates error quaerat voluptate unde, ad natus modi dolor accusantium
-    fuga repellat laboriosam ipsam numquam incidunt perspiciatis. Quod
-    aspernatur repellendus possimus. Officiis totam nulla, consectetur,
-    molestias officia, amet cupiditate recusandae veritatis aliquid vitae veniam
-    nam eaque aliquam commodi. Eveniet, quisquam neque commodi quo consectetur
-    incidunt architecto facilis voluptas laboriosam, sapiente voluptatem
-    asperiores nam explicabo sequi corporis iusto unde sit libero.
-  </p>
+  <div *ngFor="let book of filteredBooks">
+  <!-- <p>
+   
+  </p> -->
+    <p [innerHTML]="book.title"></p>
+    <p [innerHTML]="book.author"></p>
+    <p [innerHTML]="book.description"></p>
+</div>
 </ion-content>
 
 <ion-footer>
