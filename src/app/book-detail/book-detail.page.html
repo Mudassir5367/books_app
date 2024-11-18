@@ -1,4 +1,4 @@
-<ion-content>
+<!-- <ion-content>
   <div class="div-img"></div>
   <swiper-container
     class="books-slider"
@@ -37,6 +37,56 @@
     incidunt architecto facilis voluptas laboriosam, sapiente voluptatem
     asperiores nam explicabo sequi corporis iusto unde sit libero.
   </p>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="footer-buttons">
+      <ion-button routerLink="/dashboard">
+        <ion-icon name="home-outline"></ion-icon>
+
+      </ion-button>
+
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button> -->
+
+<!-- Profile Icon -->
+<!-- <ion-button>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-content>
+  <div class="div-img"></div>
+  <ion-searchbar
+    placeholder="Search books..."
+    (ionInput)="onSearchChange($event)"
+    debounce="300"
+  ></ion-searchbar>
+  <swiper-container
+    class="books-slider"
+    [autoplay]="{ 'delay': 3000, 'disableOnInteraction': false }"
+    [slidesPerView]="3"
+  >
+    <ng-container *ngFor="let books of bookImages">
+      <swiper-slide>
+        <div class="slide-content">
+          <img src="{{books}}" class="bookImage" alt="Discounted Books" />
+        </div>
+      </swiper-slide>
+    </ng-container>
+  </swiper-container>
+  <div *ngFor="let book of filteredBooks">
+    <!-- <p>
+   
+  </p> -->
+    <p [innerHTML]="book.title"></p>
+    <p [innerHTML]="book.author"></p>
+    <p [innerHTML]="book.description"></p>
+  </div>
 </ion-content>
 
 <ion-footer>
