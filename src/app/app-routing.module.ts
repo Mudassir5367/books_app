@@ -28,7 +28,8 @@ const routes: Routes = [
       import('./splash-screen/splash-screen.module').then(
         (m) => m.SplashScreenPageModule
       ),
-  },  {
+  },
+  {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
@@ -36,6 +37,14 @@ const routes: Routes = [
     path: 'book-detail',
     loadChildren: () => import('./book-detail/book-detail.module').then( m => m.BookDetailPageModule)
   },
+  {
+    path: 'my-profile',
+    loadChildren: () => import('./my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+  },  {
+    path: 'edit-my-profile',
+    loadChildren: () => import('./edit-my-profile/edit-my-profile.module').then( m => m.EditMyProfilePageModule)
+  },
+
 
 ];
 

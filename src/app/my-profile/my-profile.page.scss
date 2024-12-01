@@ -1,0 +1,49 @@
+.outer-div{
+    width: 100%;
+    padding: 10px 0px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;  
+  }
+  .profile-div-section{
+     text-align: center; 
+  }
+  .profile-image{
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+  }
+  .heading-text{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #59b88c;
+    margin: 7px 0px;  
+  }
+  .mail-text{
+      font-size: 14px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 400;
+      color: #59b88c;
+      margin: 7px 0px;      
+  }
+  button{
+      font-size: 12px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 400;
+      color: #fff;
+      margin: 7px 0px;      
+    padding: 5px 6px;
+    border: none;
+    border-radius: 6px;
+    background-color: #59b88c;  
+  }
+  .inner-data-section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    //   gap:60px
+    justify-content: space-between;
+  }
