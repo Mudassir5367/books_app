@@ -99,10 +99,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 180px;
+  top: 200px;
   position: absolute;
   // border: 2px solid red;
-  height: 210px;
+  height: 95px;
   width: 100%;
   .slide-content {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -152,4 +152,12 @@ ion-footer {
   ion-label {
     color: #fff;
   }
+}
+pdf-viewer {
+  margin-top: 15px;
+  display: block;
+  height: 80vh;
+}
+.pdf-download {
+  margin-left: 15px;
 }

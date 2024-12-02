@@ -36,6 +36,14 @@ const routes: Routes = [
     path: 'book-detail',
     loadChildren: () => import('./book-detail/book-detail.module').then( m => m.BookDetailPageModule)
   },
+  {
+    path: 'edit-my-profile',
+    loadChildren: () => import('./edit-my-profile/edit-my-profile.module').then( m => m.EditMyProfilePageModule)
+  },
+  {
+    path: 'my-profile',
+    loadChildren: () => import('./my-profile/my-profile.module').then( m => m.MyProfilePageModule)
+  },
 
 ];
 

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BookDetailPageRoutingModule } from './book-detail-routing.module';
 
 import { BookDetailPage } from './book-detail.page';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { BookDetailPage } from './book-detail.page';
     FormsModule,
     IonicModule,
     BookDetailPageRoutingModule,
+    PdfViewerModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [BookDetailPage],

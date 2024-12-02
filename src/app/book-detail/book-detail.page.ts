@@ -23,6 +23,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+// import { FilePicker } from '@capawesome/capacitor-file-picker';
 
 @Component({
   selector: 'app-book-detail',
@@ -41,7 +42,7 @@ export class BookDetailPage implements OnInit {
   books: any[] = [];
   filteredBooks: any[] = [];
   searchTerm: string = '';
-
+  // public filePath: any;
   constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
@@ -57,6 +58,7 @@ export class BookDetailPage implements OnInit {
     this.filteredBooks = this.books;
   }
   onSearchChange(event: any) {
+    console.log('onSearchChange----------------------> in');
     const term = event.target.value.toLowerCase();
     this.searchTerm = term;
 
@@ -78,5 +80,34 @@ export class BookDetailPage implements OnInit {
     } else {
       this.filteredBooks = this.books;
     }
+  }
+
+  // pickPDFFile = async () => {
+  //   const result = await FilePicker.pickFiles({
+  //     types: ['application/pdf'],
+  //     readData: true,
+  //   });
+  //   result ? (this.filePath = result.files[0].path) : alert('no file path');
+  // };
+
+  downloadPDF() {
+    // Define the path to your PDF file in the assets folder
+    const pdfUrl =
+      '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf';
+
+    // Create a temporary anchor element
+    const anchor = document.createElement('a');
+    anchor.href = pdfUrl;
+    anchor.download = 'Fatherhood Principle - Myles Munroe.pdf'; // Set the file name for download
+    anchor.target = '_blank'; // Optional: open the link in a new tab
+
+    // Append the anchor to the body
+    document.body.appendChild(anchor);
+
+    // Trigger the download
+    anchor.click();
+
+    // Remove the anchor from the DOM
+    document.body.removeChild(anchor);
   }
 }

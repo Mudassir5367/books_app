@@ -59,13 +59,8 @@
   </ion-toolbar>
 </ion-footer> -->
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div class="div-img"></div>
-  <ion-searchbar
-    placeholder="Search books..."
-    (ionInput)="onSearchChange($event)"
-    debounce="300"
-  ></ion-searchbar>
   <swiper-container
     class="books-slider"
     [autoplay]="{ 'delay': 3000, 'disableOnInteraction': false }"
@@ -79,14 +74,25 @@
       </swiper-slide>
     </ng-container>
   </swiper-container>
-  <div *ngFor="let book of filteredBooks">
-    <!-- <p>
-   
-  </p> -->
+  <!-- <div *ngFor="let book of filteredBooks">
     <p [innerHTML]="book.title"></p>
     <p [innerHTML]="book.author"></p>
     <p [innerHTML]="book.description"></p>
-  </div>
+  </div> -->
+  <!-- <ionic-button (click)="pickPDFFile()">View PDF</ionic-button> -->
+  <!-- <ion-searchbar
+    placeholder="Search books..."
+    (ionInput)="onSearchChange($event)"
+    debounce="300"
+  ></ion-searchbar> -->
+  <ion-button class="pdf-download" (click)="downloadPDF()">
+    <ion-label>PDF Download</ion-label>
+  </ion-button>
+  <pdf-viewer
+    src="../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf"
+    [render-text]="true"
+    [original-size]="false"
+  ></pdf-viewer>
 </ion-content>
 
 <ion-footer>
@@ -94,18 +100,14 @@
     <ion-buttons slot="start" class="footer-buttons">
       <ion-button routerLink="/dashboard">
         <ion-icon name="home-outline"></ion-icon>
-        <!-- <ion-label>Home</ion-label> -->
       </ion-button>
 
       <ion-button>
         <ion-icon name="search-outline"></ion-icon>
-        <!-- <ion-label>Search</ion-label> -->
       </ion-button>
 
-      <!-- Profile Icon -->
       <ion-button>
         <ion-icon name="person-outline"></ion-icon>
-        <!-- <ion-label>Profile</ion-label> -->
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
