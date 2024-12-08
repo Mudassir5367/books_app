@@ -43,12 +43,9 @@ export class BookDetailPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.bookImg = this.dataSerivce.all_books;
-    console.log(
-      'booking------------------------------>',
-      this.bookImg,
-      this.bookImg?.bookImages
-    );
+    this.dataSerivce.currentBooks$.subscribe((books) => {
+      this.bookImg = books;
+    });
     // this.filteredBooks = this.books;
   }
   // onSearchChange(event: any) {

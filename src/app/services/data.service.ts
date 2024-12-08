@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  private bookSource = new BehaviorSubject<any[]>([]);
+  public currentBooks$ = this.bookSource.asObservable();
   constructor() {}
   public all_books = [
     {
@@ -15,10 +18,8 @@ export class DataService {
         '/assets/img/ob1.png',
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
-        '/assets/img/ob1.png',
-        '/assets/img/ob2.png',
-        '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 2,
@@ -33,6 +34,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 3,
@@ -47,6 +49,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 4,
@@ -61,6 +64,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 5,
@@ -75,6 +79,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 6,
@@ -89,6 +94,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 7,
@@ -103,6 +109,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 8,
@@ -117,6 +124,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 9,
@@ -131,6 +139,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 10,
@@ -145,6 +154,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
   ];
 
@@ -162,6 +172,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 2,
@@ -176,6 +187,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 3,
@@ -190,6 +202,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 4,
@@ -202,8 +215,8 @@ export class DataService {
         '/assets/img/ob3.png',
         '/assets/img/ob1.png',
         '/assets/img/ob2.png',
-        '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 5,
@@ -218,6 +231,7 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 6,
@@ -229,9 +243,8 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
         '/assets/img/ob1.png',
-        '/assets/img/ob2.png',
-        '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 7,
@@ -246,18 +259,23 @@ export class DataService {
         '/assets/img/ob2.png',
         '/assets/img/ob3.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 8,
       bookImg: '/assets/img/h2.jpg',
       bookName: 'FATHERHOOD',
       authName: 'Marcus Berkmann',
+      bookImages: [],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 9,
       bookImg: '/assets/img/h3.jpg',
       bookName: "TRAVELLER'S",
       authName: 'Michael Rosen',
+      bookImages: [],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
     {
       id: 10,
@@ -270,6 +288,11 @@ export class DataService {
         '/assets/img/ob3.png',
         '/assets/img/ob1.png',
       ],
+      pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
     },
   ];
+
+  setBooksDetail(books: any) {
+    this.bookSource.next(books);
+  }
 }

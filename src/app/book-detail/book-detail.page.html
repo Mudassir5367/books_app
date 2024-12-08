@@ -89,7 +89,7 @@
     <ion-label>PDF Download</ion-label>
   </ion-button>
   <pdf-viewer
-    src="../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf"
+    [src]="bookImg.pdf"
     [render-text]="true"
     [original-size]="false"
   ></pdf-viewer>
@@ -102,13 +102,13 @@
         <ion-icon name="home-outline"></ion-icon>
       </ion-button>
 
-      <ion-button>
+      <ion-button routerLink="/search-book">
         <ion-icon name="search-outline"></ion-icon>
       </ion-button>
 
-      <ion-button>
+      <!-- <ion-button>
         <ion-icon name="person-outline"></ion-icon>
-      </ion-button>
+      </ion-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

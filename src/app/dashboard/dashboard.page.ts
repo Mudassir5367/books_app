@@ -19,6 +19,10 @@ export class DashboardPage implements OnInit {
   //   const centerIndex = Math.floor(this.data.length / 2);
   //   return index === centerIndex;
   // }
+  goBookDetailPage(book: any) {
+    this.dataSerivce.setBooksDetail(book);
+    this.router.navigate(['/book-detail']);
+  }
   clickSearch() {
     console.log('click');
     this.router.navigate(['/search-book']);

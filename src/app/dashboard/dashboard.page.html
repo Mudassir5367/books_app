@@ -12,17 +12,17 @@
     [autoplay]="{ 'delay': 3000, 'disableOnInteraction': false }"
     [slidesPerView]="3"
   >
-    <ng-container *ngFor="let books of all_data">
+    <ng-container *ngFor="let book of all_data">
       <swiper-slide>
         <div class="slide-content">
           <img
-            src="{{books.bookImg}}"
+            src="{{book.bookImg}}"
             class="bookImage"
             alt="Discounted Books"
-            routerLink="/book-detail"
+            (click)="goBookDetailPage(book)"
           />
-          <h2>{{books.bookName}}</h2>
-          <p>{{books.authName}}</p>
+          <h2>{{book.bookName}}</h2>
+          <p>{{book.authName}}</p>
         </div>
       </swiper-slide>
     </ng-container>
@@ -116,9 +116,9 @@
       <ion-button routerLink="/search-book">
         <ion-icon name="search-outline"></ion-icon>
       </ion-button>
-      <ion-button routerLink="/profile">
+      <!-- <ion-button routerLink="/profile">
         <ion-icon name="person-outline"></ion-icon>
-      </ion-button>
+      </ion-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
