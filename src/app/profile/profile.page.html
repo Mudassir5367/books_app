@@ -1,0 +1,43 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="editProfile()">Edit</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+     
+      <div class="profile-picture-container">
+        <ion-avatar>
+          <img [src]="user.profilePicture || 'assets/default-avatar.png'" alt="Profile Picture" />
+        </ion-avatar>
+        <ion-button *ngIf="isEditable" (click)="changeProfilePicture()">Change Picture</ion-button>
+      </div>
+
+      <ion-card-title>{{ user.name }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="user.email" type="email" [disabled]="!isEditable"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Phone</ion-label>
+        <ion-input [(ngModel)]="user.phone" type="tel" [disabled]="!isEditable"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button *ngIf="isEditable" expand="full" (click)="saveProfile()">Save</ion-button>
+</ion-content> 
+
+

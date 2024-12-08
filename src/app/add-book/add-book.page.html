@@ -1,0 +1,38 @@
+
+
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Book</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="saveBook()">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Book Name</ion-label>
+    <ion-input [(ngModel)]="newBook.bookName" placeholder="Enter Book Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Author Name</ion-label>
+    <ion-input [(ngModel)]="newBook.authName" placeholder="Enter Author Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Book Image</ion-label>
+    <ion-input type="file" (change)="onFileChange($event)"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="newBook.bookImg">
+    <ion-label>Selected Image</ion-label>
+    <img [src]="newBook.bookImg" alt="Book Image" style="width: 100px; height: 100px; object-fit: cover;">
+  </ion-item>
+</ion-content>

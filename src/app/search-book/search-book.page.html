@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Book List</ion-title>
+  </ion-toolbar>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionInput)="filterBooks($event)"
+    debounce="300"
+    placeholder="Search by title"
+  >
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="filteredBooks.length > 0">
+    <ion-card-header>
+      <ion-card-title>Books</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="scrollable-content">
+      <ion-list>
+        <ion-item
+          *ngFor="let book of filteredBooks; let i = index"
+          (click)="clickFn(i)"
+        >
+          <ion-thumbnail slot="start">
+            <img [src]="book.image_url" alt="Book Image" />
+          </ion-thumbnail>
+          <ion-label>{{ book.title }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="filteredBooks.length === 0">
+    <ion-card-content>No books found.</ion-card-content>
+  </ion-card>
+</ion-content>

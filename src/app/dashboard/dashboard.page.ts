@@ -1,120 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  public data = [
-    {
-      bookImg: '/assets/img/1.jpg',
-      bookName: 'EMILE ZOLA',
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/2.jpg',
-      bookName: 'FATHERHOOD',
-      authName: 'Marcus Berkmann',
-    },
-    {
-      bookImg: '/assets/img/3.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/4.jpg',
-      bookName: 'EMILE ZOLA',
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/5.jpg',
-      bookName: 'FATHERHOOD',
-      authName: 'Marcus Berkmann',
-    },
-    {
-      bookImg: '/assets/img/6.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/7.jpg',
-      bookName: 'EMILE ZOLA',
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/10.jpg',
-      bookName: 'FATHERHOOD',
-      authName: 'Marcus Berkmann',
-    },
-    {
-      bookImg: '/assets/img/11.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/12.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-  ];
-  public data2 = [
-    {
-      bookImg: '/assets/img/b1.jpg',
-      bookName: 'EMILE ZOLA',
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/b2.jpg',
-      bookName: 'FATHERHOOD',
-      authName: 'Marcus Berkmann',
-    },
-    {
-      bookImg: '/assets/img/b3.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/b4.jpg',
-      bookName: 'EMILE ZOLA',
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/b5.jpg',
-      bookName: 'FATHERHOOD',
-      authName: 'Marcus Berkmann',
-    },
-    {
-      bookImg: '/assets/img/b6.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/h1.jpg',
-      bookName: 'EMILE ZOLA',
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/h2.jpg',
-      bookName: 'FATHERHOOD',
-      authName: 'Marcus Berkmann',
-    },
-    {
-      bookImg: '/assets/img/h3.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-    {
-      bookImg: '/assets/img/12.jpg',
-      bookName: "TRAVELLER'S",
-      authName: 'Michael Rosen',
-    },
-  ];
-  constructor() {}
+  public all_data: any;
+  public Famous_books: any;
+  constructor(private router: Router, private dataSerivce: DataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.all_data = this.dataSerivce.all_books;
+    this.Famous_books = this.dataSerivce.Famous_books;
+  }
   // isCenterSlide(index: number): boolean {
   //   const centerIndex = Math.floor(this.data.length / 2);
   //   return index === centerIndex;
   // }
+  clickSearch() {
+    console.log('click');
+    this.router.navigate(['/search-book']);
+  }
+  logout() {
+    this.router.navigate(['/login']);
+  }
 }

@@ -66,7 +66,7 @@
     [autoplay]="{ 'delay': 3000, 'disableOnInteraction': false }"
     [slidesPerView]="3"
   >
-    <ng-container *ngFor="let books of bookImages">
+    <ng-container *ngFor="let books of bookImg.bookImages">
       <swiper-slide>
         <div class="slide-content">
           <img src="{{books}}" class="bookImage" alt="Discounted Books" />

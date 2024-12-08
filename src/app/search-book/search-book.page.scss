@@ -1,0 +1,16 @@
+ion-card {
+    margin: 10px;
+    ion-img {
+      height: 180px;
+      object-fit: cover;
+    }
+    ion-card-header {
+      text-align: center;
+    }
+  }
+
+
+  .scrollable-content {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto;
+  }
