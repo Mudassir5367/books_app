@@ -12,7 +12,7 @@
 //     '/assets/img/ob3.png',
 //     '/assets/img/ob1.png',
 //     '/assets/img/ob2.png',
-//     '/assets/img/ob3.png',
+//     '/assets/img/ob3.png', 
 //   ];
 //   public bookContent = '';
 

@@ -41,62 +41,7 @@ const routes: Routes = [
         (m) => m.BookDetailPageModule
       ),
   },
-  {
-    path: 'edit-my-profile',
-    loadChildren: () =>
-      import('./edit-my-profile/edit-my-profile.module').then(
-        (m) => m.EditMyProfilePageModule
-      ),
-  },
-  {
-    path: 'search-book',
-    loadChildren: () =>
-      import('./search-book/search-book.module').then(
-        (m) => m.SearchBookPageModule
-      ),
-  },
-  {
-    path: 'profile',
-    loadChildren: () =>
-      import('./profile/profile.module').then((m) => m.ProfilePageModule),
-  },
-  {
-    path: 'favorites',
-    loadChildren: () =>
-      import('./favorites/favorites.module').then((m) => m.FavoritesPageModule),
-  },
-  {
-    path: 'settings',
-    loadChildren: () =>
-      import('./settings/settings.module').then((m) => m.SettingsPageModule),
-  },
-  {
-    path: 'about',
-    loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutPageModule),
-  },
-  {
-    path: 'help-page',
-    loadChildren: () =>
-      import('./help-page/help-page.module').then((m) => m.HelpPagePageModule),
-  },
-  {
-    path: 'our-books',
-    loadChildren: () =>
-      import('./our-books/our-books.module').then((m) => m.OurBooksPageModule),
-  },
-  {
-    path: 'add-book',
-    loadChildren: () =>
-      import('./add-book/add-book.module').then((m) => m.AddBookPageModule),
-  },
-  {
-    path: 'my-profile',
-    loadChildren: () =>
-      import('./my-profile/my-profile.module').then(
-        (m) => m.MyProfilePageModule
-      ),
-  },
+
 ];
 
 @NgModule({
