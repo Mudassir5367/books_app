@@ -20,6 +20,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 2,
@@ -35,6 +36,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 3,
@@ -50,6 +52,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 4,
@@ -65,6 +68,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 5,
@@ -80,6 +84,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 6,
@@ -95,6 +100,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 7,
@@ -110,6 +116,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 8,
@@ -125,6 +132,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 9,
@@ -140,6 +148,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
     {
       id: 10,
@@ -155,6 +164,7 @@ export class DataService {
         '/assets/img/ob3.png',
       ],
       pdf: '../../assets/pdf/toaz.info-fatherhood-principle-myles-munroe-pr_c792992f98afdc7656ea835e62e588e8.pdf',
+      isFavorite: false,
     },
   ];
 
@@ -293,6 +303,7 @@ export class DataService {
   ];
 
   setBooksDetail(books: any) {
+    console.log('books ',books)
     this.bookSource.next(books);
   }
 }
